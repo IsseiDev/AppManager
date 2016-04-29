@@ -48,7 +48,7 @@ public class StorageViewer {
     public static String showExternalSDCardTotalSpace(Context ctx){
 
         if (externalMemoryAvailable()){
-            File path = Environment.getExternalStorageDirectory();
+            File path = FileUtils.getExternalStorage();
             StatFs fs = new StatFs(path.getPath());
             total = (long)fs.getBlockCount() * fs.getBlockSize();
 
@@ -56,12 +56,11 @@ public class StorageViewer {
             File path = Environment.getExternalStorageDirectory();
             StatFs fs = new StatFs(path.getPath());
             total = (long)fs.getBlockCount() * fs.getBlockSize();
-            //return Formatter.formatFileSize(ctx, total);
+
         }
         return Formatter.formatFileSize(ctx, total);
 
     }
-
 
 
     /**
@@ -70,7 +69,8 @@ public class StorageViewer {
      * @return total memory with formatter.
      */
     public static String showExternalSDCardFreeSpace(Context ctx){
-        File path = Environment.getExternalStorageDirectory();
+
+        File path = FileUtils.getExternalStorage();
         StatFs fs = new StatFs(path.getPath());
         aval = (long)fs.getAvailableBlocks() * fs.getBlockSize();
         return Formatter.formatFileSize(ctx, aval);
@@ -85,7 +85,8 @@ public class StorageViewer {
      */
     public static String showExternalSDCardUsedSpace(Context ctx){
         if (externalMemoryAvailable()){
-            File path = Environment.getExternalStorageDirectory();
+
+            File path = FileUtils.getExternalStorage();
             StatFs fs = new StatFs(path.getPath());
             long total = (long)fs.getBlockCount() * fs.getBlockSize();
             long aval = (long)fs.getAvailableBlocks() * fs.getBlockSize();

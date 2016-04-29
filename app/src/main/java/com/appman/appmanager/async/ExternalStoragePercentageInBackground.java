@@ -1,5 +1,6 @@
 package com.appman.appmanager.async;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -39,6 +40,7 @@ public class ExternalStoragePercentageInBackground extends AsyncTask<Void, Strin
         super.onCancelled();
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
@@ -54,7 +56,6 @@ public class ExternalStoragePercentageInBackground extends AsyncTask<Void, Strin
             Log.i("TOTAL EXT STORAGE VALUE AFTER TYPECASTING-->", String.valueOf(totalPer));
 
             // Setting up the progress bar and textview
-            //FragmentStorage.storageSimpleViewInternal = new NumberProgressBar(mActivity);
             FragmentStorage.storageSimpleViewExternal.setProgress(per);
             FragmentStorage.txtExternalPercent.setText(String.valueOf(per)+ "%");
         }catch (NumberFormatException nfe){

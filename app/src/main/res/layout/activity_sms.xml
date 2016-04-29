@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <include android:id="@id/toolbar"
+    <include android:id="@id/toolbarFileManager"
         layout="@layout/toolbar"/>
     <com.pnikosis.materialishprogress.ProgressWheel
         android:id="@+id/progress"
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutSmsCount"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/toolbarFileManager"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:padding="10dp"

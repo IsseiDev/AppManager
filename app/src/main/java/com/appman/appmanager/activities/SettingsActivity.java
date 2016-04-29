@@ -127,7 +127,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     @Override
     public void setContentView(int layoutResID) {
         ViewGroup contentView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.activity_settings, new LinearLayout(this), false);
-        toolbar = (Toolbar) contentView.findViewById(R.id.toolbar);
+        toolbar = (Toolbar) contentView.findViewById(R.id.toolbarFileManager);
         //TODO Toolbar should load the default style in XML (white title and back arrow), but doesn't happen
         toolbar.setBackgroundColor(getResources().getColor(R.color.md_blue_grey_500));
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));

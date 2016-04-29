@@ -28,8 +28,6 @@ import com.appman.appmanager.views.TextView_Light;
 import com.appman.appmanager.views.TextView_Regular;
 import com.gc.materialdesign.views.ProgressBarDeterminate;
 import com.pnikosis.materialishprogress.ProgressWheel;
-import com.sromku.simple.storage.SimpleStorage;
-import com.sromku.simple.storage.Storage;
 
 import java.util.ArrayList;
 
@@ -129,13 +127,8 @@ public class FragmentStorage extends AppCompatActivity{
 
         calculateStoragePercentage();
 
-        sample();
     }
 
-    private void sample() {
-        Storage storage = SimpleStorage.getInternalStorage(FragmentStorage.this);
-        //List<File> file = storage.getFiles(storageLocationsName, OrderType.NAME, "");
-    }
 
     /**
      * THIS METHOD WILL SET THE STATUS BAR TRANSLUCENT ONLY ON KITKAT
@@ -162,7 +155,7 @@ public class FragmentStorage extends AppCompatActivity{
      */
 
     private void setInitialConfiguration(){
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar = (Toolbar)findViewById(R.id.toolbarFileManager);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null ) {
             getSupportActionBar().setTitle("Storage Details");
@@ -268,7 +261,7 @@ public class FragmentStorage extends AppCompatActivity{
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                apps_size = SpaceStatistics.getAppsStatistics(FragmentStorage.this);
+                //apps_size = SpaceStatistics.getAppsStatistics(FragmentStorage.this);
                 alarms_size = SpaceStatistics.getAlarmsStatistics(FragmentStorage.this);
                 image_size = SpaceStatistics.getImagesStatistics(FragmentStorage.this);
                 documents_size = SpaceStatistics.getDocumentsStatistics(FragmentStorage.this);

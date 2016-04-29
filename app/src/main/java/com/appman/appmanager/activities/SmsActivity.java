@@ -68,7 +68,7 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
      * WHICH LAYS IN THE BOTTOM OF SOME DEVICES LIKE NEXUS, HTC, ETC.
      */
     private void setUpToolbar(){
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbarFileManager);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null){
             getSupportActionBar().setTitle(getResources().getString(R.string.action_sms));

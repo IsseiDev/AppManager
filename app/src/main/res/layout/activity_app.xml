@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <include
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbarFileManager"
         layout="@layout/toolbar" />
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/toolbarFileManager"
         android:id="@+id/relativeLayout1">
         <TextView
             android:id="@+id/header"

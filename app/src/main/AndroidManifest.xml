@@ -53,6 +53,7 @@
         <activity android:name=".activities.AboutActivity" />
         <activity android:name=".activities.DeviceInfo" />
         <activity android:name=".activities.SmsActivity" />
+        <activity android:name=".activities.ActivityFileManager"/>
 
         <meta-data
             android:name="io.fabric.ApiKey"

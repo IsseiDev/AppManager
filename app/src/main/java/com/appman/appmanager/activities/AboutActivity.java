@@ -49,7 +49,7 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     private void setInitialConfiguration() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarFileManager);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.action_about);
         toolbar.setBackgroundColor(getResources().getColor(R.color.bkg_card));

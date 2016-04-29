@@ -37,7 +37,7 @@ public class DeviceInfo extends AppCompatActivity {
         setContentView(R.layout.device_info);
         this.appPreferences = AppManagerApplication.getAppPreferences();
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbarFileManager);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(getResources().getString(R.string.action_device));
         toolbar.setBackgroundColor(getResources().getColor(R.color.md_grey_500));

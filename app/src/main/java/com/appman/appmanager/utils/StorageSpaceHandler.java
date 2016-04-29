@@ -42,22 +42,37 @@ public class StorageSpaceHandler {
     }
 
     public static float getExternalStorageSpace(){
-//        StatFs fs = new StatFs(Environment.getRootDirectory()+"/storage/extSdCard/");
-//        StatFs fs = new StatFs(Environment.getRootDirectory()+"/mnt/extSdCard/");
-        File path = Environment.getExternalStorageDirectory();
+        /*File path = Environment.getExternalStorageDirectory();
+        StatFs fs = new StatFs(path.getPath());
+        float total = ((float)fs.getBlockCount() * fs.getBlockSize()) / 1048576;
+        return total;*/
+
+        File path = getExternalStorage();
         StatFs fs = new StatFs(path.getPath());
         float total = ((float)fs.getBlockCount() * fs.getBlockSize()) / 1048576;
         return total;
     }
 
     public static float getExternalUsedSpace(){
-//        StatFs fs = new StatFs(Environment.getRootDirectory()+"/mnt/extSdCard/");
-        File path = Environment.getExternalStorageDirectory();
+        /*File path = Environment.getExternalStorageDirectory();
+        StatFs fs = new StatFs(path.getPath());
+        float total = ((float)fs.getBlockCount() * fs.getBlockSize()) / 1048576;
+        float free  = ((float)fs.getAvailableBlocks() * fs.getBlockSize()) / 1048576;
+        float busy  = total - free;
+        return busy;*/
+
+        File path = getExternalStorage();
         StatFs fs = new StatFs(path.getPath());
         float total = ((float)fs.getBlockCount() * fs.getBlockSize()) / 1048576;
         float free  = ((float)fs.getAvailableBlocks() * fs.getBlockSize()) / 1048576;
         float busy  = total - free;
         return busy;
+    }
+
+    public static File getExternalStorage() {
+        //returns the path to the external storage or null if it doesn't exist
+        String path = System.getenv("SECONDARY_STORAGE");
+        return path!=null ? new File(path) : null;
     }
 
 

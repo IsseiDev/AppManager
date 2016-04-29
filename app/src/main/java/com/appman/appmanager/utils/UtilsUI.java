@@ -12,8 +12,8 @@ import com.appman.appmanager.AppManagerApplication;
 import com.appman.appmanager.R;
 import com.appman.appmanager.activities.AboutActivity;
 import com.appman.appmanager.activities.ActivityContacts;
+import com.appman.appmanager.activities.ActivityFileManager;
 import com.appman.appmanager.activities.DeviceInfo;
-import com.appman.appmanager.activities.FragmentStorage;
 import com.appman.appmanager.activities.MemoryCleanActivity;
 import com.appman.appmanager.activities.SettingsActivity;
 import com.appman.appmanager.activities.SmsActivity;
@@ -96,7 +96,7 @@ public class UtilsUI {
                 new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_favorites)).withIcon(GoogleMaterial.Icon.gmd_star).withBadge(favoriteApps).withBadgeStyle(badgeStyle).withIdentifier(3),
                 new DividerDrawerItem(),
                 new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_ram)).withIcon(GoogleMaterial.Icon.gmd_memory).withBadge(context.getResources().getString(R.string.action_ram_description)).withSelectable(false).withIdentifier(5),
-                new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_storage)).withIcon(GoogleMaterial.Icon.gmd_storage).withSelectable(false).withIdentifier(6),
+                new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_file_manager)).withIcon(GoogleMaterial.Icon.gmd_storage).withSelectable(false).withIdentifier(6),
                 new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_sms)).withIcon(GoogleMaterial.Icon.gmd_sms).withSelectable(false).withIdentifier(6),
                 new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_contacts)).withIcon(GoogleMaterial.Icon.gmd_phone).withSelectable(false).withIdentifier(7),
                 new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_device)).withIcon(GoogleMaterial.Icon.gmd_devices).withSelectable(false).withIdentifier(8),
@@ -138,9 +138,9 @@ public class UtilsUI {
                         context.startActivity(new Intent(context, MemoryCleanActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                         break;
 
-                    // Storage
+                    // File Manager
                     case 6:
-                        context.startActivity(new Intent(context, FragmentStorage.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                        context.startActivity(new Intent(context, ActivityFileManager.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                         break;
                     // SMS Activity
                     case 7:

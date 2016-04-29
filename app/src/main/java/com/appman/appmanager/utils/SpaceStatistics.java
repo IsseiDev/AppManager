@@ -2,6 +2,7 @@ package com.appman.appmanager.utils;
 
 import android.content.Context;
 import android.os.Environment;
+import android.os.StatFs;
 import android.text.format.Formatter;
 
 import java.io.File;
@@ -12,7 +13,7 @@ import java.io.File;
 public class SpaceStatistics {
 
     // Global Definitions
-    private static String APPS = Environment.getExternalStorageDirectory()+"/data/app";
+    private static String APPS = "/storage/emulated/0/data/app";
     private static String ALARMS = Environment.DIRECTORY_ALARMS;
     private static String DCIM =  Environment.DIRECTORY_DCIM;
     private static String DOCUMENTS = Environment.DIRECTORY_DOCUMENTS;
@@ -32,7 +33,7 @@ public class SpaceStatistics {
     public static String getAppsStatistics(Context ctx){
         long size = 0;
 
-        try{
+        /*try{
             File path = new File(APPS);
             if (path.isFile()){
                 size += path.length();
@@ -41,6 +42,14 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+
+        try{
+            File path = FileUtils.getPublicDirectory(APPS);
+            StatFs fs = new StatFs(path.getPath());
+            size = (long)fs.getBlockCount() * fs.getBlockSize();
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return Formatter.formatFileSize(ctx, size);
     }
@@ -55,7 +64,7 @@ public class SpaceStatistics {
     public static String getAlarmsStatistics(Context ctx){
         long size = 0;
 
-        try{
+        /*try{
             File path = new File(ALARMS);
             if (path.isFile()){
                 size += path.length();
@@ -64,8 +73,16 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+
+        try{
+            File path = FileUtils.getPublicDirectory(ALARMS);
+            size = Long.parseLong(FileUtils.getSize(ctx, path));
+            return Formatter.formatFileSize(ctx, size);
+        }catch (Exception e){
+            e.getMessage();
         }
-        return Formatter.formatFileSize(ctx, size);
+        return null;
     }
 
 
@@ -77,8 +94,9 @@ public class SpaceStatistics {
 
     public static String getImagesStatistics(Context ctx){
         long size = 0;
+        String s;
 
-        try{
+        /*try{
             File path = new File(DCIM);
             if (path.isFile()){
                 size += path.length();
@@ -87,8 +105,17 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+
+        try{
+            File path = FileUtils.getPublicDirectory(DCIM);
+            //size = Long.parseLong(FileUtils.getSize(ctx, path));
+            s = FileUtils.getSize(ctx, path);
+            return s;
+        }catch (Exception e){
+            e.getMessage();
         }
-        return Formatter.formatFileSize(ctx, size);
+        return null;
     }
 
 
@@ -101,7 +128,7 @@ public class SpaceStatistics {
     public static String getDocumentsStatistics(Context ctx){
         long size = 0;
 
-        try{
+        /*try{
             File path = new File(DOCUMENTS);
             if (path.isFile()) {
                 size += path.length();
@@ -111,6 +138,14 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+
+        try{
+            File path = FileUtils.getPublicDirectory(DOCUMENTS);
+            size = Long.parseLong(FileUtils.getSize(ctx, path));
+
+        }catch (Exception e){
+            e.getMessage();
         }
         return Formatter.formatFileSize(ctx, size);
     }
@@ -124,7 +159,7 @@ public class SpaceStatistics {
     public static String getDownloadsStatistics(Context ctx){
         long size = 0;
 
-        try{
+        /*try{
             File path = new File(DOWNLOADS);
             if (path.isFile()){
                 size += path.length();
@@ -133,6 +168,13 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+
+        try{
+            File path = FileUtils.getPublicDirectory(DOWNLOADS);
+            size = Long.parseLong(FileUtils.getSize(ctx, path));
+        }catch (Exception e){
+            e.getMessage();
         }
         return Formatter.formatFileSize(ctx, size);
     }
@@ -146,7 +188,7 @@ public class SpaceStatistics {
     public static String getMusicStatistics(Context ctx){
         long size = 0;
 
-        try{
+        /*try{
             File path = new File(MUSIC);
             if (path.isFile()){
                 size += path.length();
@@ -155,6 +197,13 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+
+        try{
+            File path = FileUtils.getPublicDirectory(MUSIC);
+            size = Long.parseLong(FileUtils.getSize(ctx, path));
+        }catch (Exception e){
+            e.getMessage();
         }
         return Formatter.formatFileSize(ctx, size);
     }
@@ -162,7 +211,7 @@ public class SpaceStatistics {
     public static String getMoviesStatistics(Context ctx){
         long size = 0;
 
-        try{
+        /*try{
             File path = new File(MOVIES);
             if (path.isFile()){
                 size += path.length();
@@ -171,6 +220,13 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+
+        try{
+            File path = FileUtils.getPublicDirectory(MOVIES);
+            size = Long.parseLong(FileUtils.getSize(ctx, path));
+        }catch (Exception e){
+            e.getMessage();
         }
         return Formatter.formatFileSize(ctx, size);
     }
@@ -178,7 +234,7 @@ public class SpaceStatistics {
     public static String getPicturesStatistics(Context ctx){
         long size = 0;
 
-        try{
+        /*try{
             File path = new File(PICTURES);
             if (path.isFile()){
                 size += path.length();
@@ -187,6 +243,12 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+        try{
+            File path = FileUtils.getPublicDirectory(PICTURES);
+            size = Long.parseLong(FileUtils.getSize(ctx, path));
+        }catch (Exception e){
+            e.getMessage();
         }
         return Formatter.formatFileSize(ctx, size);
     }
@@ -194,7 +256,7 @@ public class SpaceStatistics {
     public static String getRingtonesStatistics(Context ctx){
         long size = 0;
 
-        try{
+        /*try{
             File path = new File(RINGTONES);
             if (path.isDirectory()){
                 size += path.length();
@@ -203,6 +265,13 @@ public class SpaceStatistics {
             }
         }catch (Exception e){
             e.getMessage().toString();
+        }*/
+
+        try{
+            File path = FileUtils.getPublicDirectory(RINGTONES);
+            size = Long.parseLong(FileUtils.getSize(ctx, path));
+        }catch (Exception e){
+            e.getMessage();
         }
         return Formatter.formatFileSize(ctx, size);
     }

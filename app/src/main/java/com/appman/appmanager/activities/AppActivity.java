@@ -74,7 +74,7 @@ public class AppActivity extends AppCompatActivity {
     }
 
     private void setInitialConfiguration() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarFileManager);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null ) {
             getSupportActionBar().setTitle("");
