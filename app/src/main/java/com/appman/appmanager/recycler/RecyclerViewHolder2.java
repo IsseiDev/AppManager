@@ -3,6 +3,7 @@ package com.appman.appmanager.recycler;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.graphics.Palette;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;

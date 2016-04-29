@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,83 +11,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/linearLayoutMain"
         android:background="@color/colorPrimaryDark0"
-        android:layout_below="@+id/toolbarFileManager">
+        android:padding="10dp">
 
-        <TextView
+        <com.appman.appmanager.views.TextView_Regular
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Storage Usage"
-            android:id="@+id/textViewStorageUsage"
-            android:layout_above="@+id/linearLayoutFileManagerStorage"
-            android:layout_centerHorizontal="true"
+            android:id="@+id/textViewFileManagerStorage"
+            android:padding="10dp"
+            android:text="Storage Details"
             android:layout_gravity="center"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
             android:textAllCaps="true"
-            android:gravity="center"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/linearLayoutFileManagerStorage"
-            android:padding="10dp"
-            android:weightSum="2"
-            android:layout_alignBottom="@+id/toolbarFileManager">
-
-            <com.appman.appmanager.views.TextView_Light
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Internal Storage"
-                android:drawableLeft="@drawable/ic_internal"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:textColor="@color/white"
-                android:fontFamily="sans-serif-condensed"
-                android:textAllCaps="true"
-                android:id="@+id/textViewInternalStorage"/>
-            <com.appman.appmanager.views.TextView_Light
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="External Storage"
-                android:drawableLeft="@drawable/ic_external"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:textColor="@color/white"
-                android:fontFamily="sans-serif-condensed"
-                android:textAllCaps="true"
-                android:id="@+id/textViewExternalStorage"/>
-
-        </LinearLayout>
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-condensed"/>
 
     </LinearLayout>
 
-
-
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fab_colorNormal="@color/colorAccentLight"
-        app:fab_colorPressed="@color/colorPrimaryDark0"
-        app:fab_icon="@drawable/ic_create"
-        android:id="@+id/fab_create"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_file_manager"
+    <com.appman.appmanager.slidingtablayout.SlidingTabLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark0"
+        android:id="@+id/slidingTabsLayout"
+        android:elevation="2dp"/>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingBottom="48dp"
-        android:layout_below="@+id/linearLayoutMain" />
-</RelativeLayout>
+        android:layout_width="match_parent"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

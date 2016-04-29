@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,8 +24,6 @@ import com.appman.appmanager.R;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Set;
 
@@ -127,7 +124,6 @@ public class UtilsApp {
      * @return true if all files have been deleted, false otherwise
      */
     public static Boolean deleteAppFiles(Context context) {
-        //UtilsDialog.showTitleContent(context, "Confirm Delete", "Are you sure you want to delete all the files stored in the extracted folder ?");
         Boolean res = false;
         File f = getAppFolder();
         if (f.exists() && f.isDirectory()) {
@@ -166,19 +162,17 @@ public class UtilsApp {
     }
 
     /**
-     * OPENS FACBOOK ACCOUNT
+     * OPENS FACEBOOK ACCOUNT
      * @param context
      * @param id
      */
-    /*public static void goToFacebook(Context context, String id){
-        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/" + id)));
-    }*/
+
     public static Intent getFacebookIntent(Context context, String id){
         try{
             context.getPackageManager().getPackageInfo("com.facebook.katana",0);
             return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/" + id));
         }catch (PackageManager.NameNotFoundException nnfe){
-            nnfe.getMessage().toString();
+            nnfe.getMessage();
             return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/" + id));
         }
     }
@@ -272,73 +266,7 @@ public class UtilsApp {
         }
     }
 
-    /**
-     * Retrieve if an app is hidden
-     * @param appInfo App to check
-     * @param appHidden Set with apps
-     * @return true if the app is hidden, false otherwise
-     */
-    public static Boolean isAppHidden(AppInfo appInfo, Set<String> appHidden) {
-        Boolean res = false;
-        if (appHidden.contains(appInfo.toString())) {
-            res = true;
-        }
 
-        return res;
-    }
-
-    /**
-     * Save the app as hidden
-     * @param context Context
-     * @param fabHide FAB button to change
-     * @param isHidden true if the app is hidden, false otherwise
-     */
-    /*public static void setAppHidden(Context context, FloatingActionButton fabHide, Boolean isHidden) {
-        if (isHidden) {
-            fabHide.setTitle(context.getResources().getString(R.string.action_unhide));
-            fabHide.setIcon(R.drawable.ic_visibility_white);
-        } else {
-            fabHide.setTitle(context.getResources().getString(R.string.action_hide));
-            fabHide.setIcon(R.drawable.ic_visibility_off_white);
-        }
-    }*/
-
-    /**
-     * Save an app icon to cache folder
-     * @param context Context
-     * @param appInfo App to save icon
-     * @return true if the icon has been saved, false otherwise
-     */
-    public static Boolean saveIconToCache(Context context, AppInfo appInfo) {
-        Boolean res = false;
-
-        try {
-            ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(appInfo.getAPK(), 0);
-            File fileUri = new File(context.getCacheDir(), appInfo.getAPK());
-            FileOutputStream out = new FileOutputStream(fileUri);
-            Drawable icon = context.getPackageManager().getApplicationIcon(applicationInfo);
-            BitmapDrawable iconBitmap = (BitmapDrawable) icon;
-            iconBitmap.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, out);
-            res = true;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return res;
-    }
-
-    /**
-     * Delelete an app icon from cache folder
-     * @param context Context
-     * @param appInfo App to remove icon
-     * @return true if the icon has been removed, false otherwise
-     */
-    public static Boolean removeIconFromCache(Context context, AppInfo appInfo) {
-        File file = new File(context.getCacheDir(), appInfo.getAPK());
-        return file.delete();
-    }
 
     /**
      * Get an app icon from cache folder

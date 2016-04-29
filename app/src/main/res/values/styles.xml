@@ -33,135 +33,6 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="NumberProgressBar_Default">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">#3498DB</item>
-
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">#3498DB</item>
-
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
-
-    <style name="NumberProgressBar_Passing_Green">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">#70A800</item>
-
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">#70A800</item>
-
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
-
-    <style name="NumberProgressBar_Beauty_Red">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">#FF3D7F</item>
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">#FF3D7F</item>
-
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
-
-    <style name="NumberProgressBar_Warning_Red">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">#E74C3C</item>
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">#E74C3C</item>
-
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
-
-    <style name="NumberProgressBar_Relax_Blue">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">#6DBCDB</item>
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">#6DBCDB</item>
-
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
-
-    <style name="NumberProgressBar_Grace_Yellow">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">#FFC73B</item>
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">#FFC73B</item>
-
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
-
-    <style name="NumberProgressBar_Funny_Orange">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">#FF530D</item>
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">#FF530D</item>
-
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
-
-    <style name="NumberProgressBar_Twinkle_Night">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">#ECF0F1</item>
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">#ECF0F1</item>
-
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
 
     <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/rating_custom_bar</item>
@@ -182,6 +53,7 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1.0dip</item>
     </style>
+
     <style name="ListStyle_2">
         <item name="android:scrollbars">none</item>
         <item name="android:fadingEdge">none</item>
@@ -203,30 +75,11 @@
         <item name="android:singleLine">false</item>
     </style>
 
-    <attr name="colorAccentLight"
-        format="color|reference" />
+    <attr name="colorAccentLight" format="color|reference" />
 
-    <attr name="colorSelected"
-        format="color|reference" />
+    <attr name="colorSelected" format="color|reference" />
 
-    <!-- FILE EXPLORER -->
-    <!--<style name="AppManger.Audio" >
-        <item name="colorPrimary">@color/colorPrimary1</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark1</item>
-        <item name="colorAccent">@color/colorAccentDark1</item>
-    </style>
 
-    <style name="AppTheme.Image" >
-        <item name="colorPrimary">@color/colorPrimary2</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
-        <item name="colorAccent">@color/colorAccentDark2</item>
-    </style>
-
-    <style name="AppTheme.Video" >
-        <item name="colorPrimary">@color/colorPrimary3</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark3</item>
-        <item name="colorAccent">@color/colorAccentDark3</item>
-    </style>-->
 
     <!--TEXT STYLES-->
 
@@ -236,32 +89,36 @@
         <item name="android:singleLine">true</item>
     </style>
 
-    <style name="Text.Body1" >
+    <style name="Text.Body1">
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
         <item name="android:textColor">?android:textColorSecondary</item>
     </style>
 
-    <style name="Text.Headline" >
+    <style name="Text.Headline">
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
 
-    <style name="Text.Subhead" >
+    <style name="Text.Subhead">
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
 
-    <style name="Text.Body1.Inverse" >
+    <style name="Text.Body1.Inverse">
         <item name="android:textColor">?android:textColorSecondaryInverse</item>
     </style>
 
-    <style name="Text.Headline.Inverse" >
+    <style name="Text.Headline.Inverse">
         <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
 
-    <style name="Text.Subhead.Inverse" >
+    <style name="Text.Subhead.Inverse">
         <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
+
+    <style name="AppManager.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppManager.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>

@@ -46,7 +46,7 @@ public class UtilsUI {
         final String loadingLabel = "...";
         int header;
         AppPreferences appPreferences = AppManagerApplication.getAppPreferences();
-        String apps, systemApps, favoriteApps, hiddenApps;
+        String apps, systemApps, favoriteApps;
 
         if (getDayOrNight() == 1) {
             header = R.drawable.header_day;
@@ -68,11 +68,6 @@ public class UtilsUI {
             favoriteApps = Integer.toString(appFavoriteAdapter.getItemCount());
         } else {
             favoriteApps = loadingLabel;
-        }
-        if (appHiddenAdapter != null) {
-            hiddenApps = Integer.toString(appHiddenAdapter.getItemCount());
-        } else {
-            hiddenApps = loadingLabel;
         }
 
         AccountHeader headerResult = new AccountHeaderBuilder()

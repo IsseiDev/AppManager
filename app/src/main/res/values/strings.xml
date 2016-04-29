@@ -182,4 +182,8 @@
     <!- -->
     <string name="ad_mob_banner_id">ca-app-pub-5293031144790539/2510067801</string>
     <string name="ad_mob_interstitial_id">ca-app-pub-5293031144790539/3986801004</string>
+    <string name="title_activity_activity_file_manager">ActivityFileManager</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

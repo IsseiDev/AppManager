@@ -105,7 +105,7 @@
                 android:singleLine="true"
                 android:text="@string/scanning"
                 android:visibility="visible"
-                android:textColor="@color/about_libraries_window_background"
+                android:textColor="@color/white"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/textViewTotalRam"
