@@ -18,45 +18,40 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import java.io.File;
 
 
-public final class RecyclerViewHolder2 extends RecyclerViewHolder
-{
+public final class RecyclerViewHolder2 extends RecyclerViewHolder {
     private TextView name;
 
     private TextView date;
 
-    RecyclerViewHolder2(Context context,RecyclerOnItemClickListener listener,View view)
-    {
+    RecyclerViewHolder2(Context context,RecyclerOnItemClickListener listener,View view) {
         super(context,listener,view);
     }
 
     @Override
     protected void loadIcon()
     {
-        image=(ImageView)itemView.findViewById(R.id.list_item_image);
+        image = (ImageView)itemView.findViewById(R.id.list_item_image);
     }
 
     @Override
     protected void loadName()
     {
-        name=(TextView)itemView.findViewById(R.id.list_item_name);
+        name = (TextView)itemView.findViewById(R.id.list_item_name);
     }
 
     @Override
     protected void loadInfo()
     {
-        date=(TextView)itemView.findViewById(R.id.list_item_date);
+        date = (TextView)itemView.findViewById(R.id.list_item_date);
     }
 
     @Override
-    protected void bindIcon(File file,Boolean selected)
-    {
-        final int color= ContextCompat.getColor(context,FileUtils.getColorResource(file));
+    protected void bindIcon(File file,Boolean selected) {
+        final int color = ContextCompat.getColor(context,FileUtils.getColorResource(file));
 
-        Glide.with(context).load(file).asBitmap().fitCenter().into(new BitmapImageViewTarget(image)
-        {
+        Glide.with(context).load(file).asBitmap().fitCenter().into(new BitmapImageViewTarget(image) {
             @Override
-            public void onResourceReady(Bitmap resource,GlideAnimation<? super Bitmap> animation)
-            {
+            public void onResourceReady(Bitmap resource,GlideAnimation<? super Bitmap> animation) {
                 this.view.setImageBitmap(resource);
 
                 name.setBackgroundColor(Palette.from(resource).generate().getMutedColor(color));
@@ -65,17 +60,15 @@ public final class RecyclerViewHolder2 extends RecyclerViewHolder
     }
 
     @Override
-    protected void bindName(File file)
-    {
-        boolean extension= PreferenceUtils.getBoolean(context,"pref_extension",true);
+    protected void bindName(File file) {
+        boolean extension = PreferenceUtils.getBoolean(context,"pref_extension",true);
 
         name.setText(extension ? FileUtils.getName(file) : file.getName());
     }
 
     @Override
-    protected void bindInfo(File file)
-    {
-        if(date==null) return;
+    protected void bindInfo(File file) {
+        if(date == null) return;
 
         date.setText(FileUtils.getLastModified(file));
     }

@@ -7,8 +7,7 @@ import android.widget.ImageView;
 
 import java.io.File;
 
-public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder
-{
+public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder {
     final Context context;
 
     ImageView image;
@@ -23,11 +22,10 @@ public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder
 
     //----------------------------------------------------------------------------------------------
 
-    RecyclerViewHolder(Context context, RecyclerOnItemClickListener listener, View view)
-    {
+    RecyclerViewHolder(Context context, RecyclerOnItemClickListener listener, View view) {
         super(view);
 
-        this.context=context;
+        this.context = context;
 
         setClickListener(listener);
 
@@ -54,9 +52,8 @@ public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder
 
     //----------------------------------------------------------------------------------------------
 
-    private void setClickListener(final RecyclerOnItemClickListener listener)
-    {
-        this.onActionClickListener=new View.OnClickListener()
+    private void setClickListener(final RecyclerOnItemClickListener listener) {
+        this.onActionClickListener = new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -65,7 +62,7 @@ public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder
             }
         };
 
-        this.onActionLongClickListener=new View.OnLongClickListener()
+        this.onActionLongClickListener = new View.OnLongClickListener()
         {
             @Override
             public boolean onLongClick(View v)
@@ -74,7 +71,7 @@ public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder
             }
         };
 
-        this.onClickListener=new View.OnClickListener()
+        this.onClickListener = new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -83,7 +80,7 @@ public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder
             }
         };
 
-        this.onLongClickListener=new View.OnLongClickListener()
+        this.onLongClickListener = new View.OnLongClickListener()
         {
             @Override
             public boolean onLongClick(View v)
@@ -93,8 +90,7 @@ public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder
         };
     }
 
-    void setData(final File file,Boolean selected)
-    {
+    void setData(final File file,Boolean selected) {
         itemView.setOnClickListener(onClickListener);
 
         itemView.setOnLongClickListener(onLongClickListener);
@@ -108,8 +104,7 @@ public abstract class RecyclerViewHolder extends RecyclerView.ViewHolder
         bindInfo(file);
     }
 
-    void setVisibility(View view,Boolean visibility)
-    {
+    void setVisibility(View view,Boolean visibility) {
         view.setVisibility(visibility ? View.VISIBLE : View.GONE);
     }
 }

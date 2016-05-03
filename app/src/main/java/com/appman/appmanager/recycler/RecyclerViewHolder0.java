@@ -20,16 +20,14 @@ import com.appman.appmanager.utils.PreferenceUtils;
 import java.io.File;
 
 
-public final class RecyclerViewHolder0 extends RecyclerViewHolder
-{
+public final class RecyclerViewHolder0 extends RecyclerViewHolder {
     private TextView name;
 
     private TextView date;
 
     private TextView size;
 
-    RecyclerViewHolder0(Context context, RecyclerOnItemClickListener listener, View view)
-    {
+    RecyclerViewHolder0(Context context, RecyclerOnItemClickListener listener, View view) {
         super(context,listener,view);
     }
 
@@ -46,8 +44,7 @@ public final class RecyclerViewHolder0 extends RecyclerViewHolder
     }
 
     @Override
-    protected void loadInfo()
-    {
+    protected void loadInfo() {
         date=(TextView)itemView.findViewById(R.id.list_item_date);
 
         size=(TextView)itemView.findViewById(R.id.list_item_size);
@@ -55,16 +52,13 @@ public final class RecyclerViewHolder0 extends RecyclerViewHolder
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
-    protected void bindIcon(File file,Boolean selected)
-    {
-        if(PreferenceUtils.getBoolean(context,"pref_icon",true))
-        {
+    protected void bindIcon(File file,Boolean selected) {
+        if(PreferenceUtils.getBoolean(context,"pref_icon",true)) {
             image.setOnClickListener(onActionClickListener);
 
             image.setOnLongClickListener(onActionLongClickListener);
 
-            if(selected)
-            {
+            if(selected) {
                 int color= ContextCompat.getColor(context,R.color.misc_file);
 
                 image.setBackground(getBackground(color));
@@ -75,8 +69,7 @@ public final class RecyclerViewHolder0 extends RecyclerViewHolder
 
                 image.setImageDrawable(drawable);
             }
-            else
-            {
+            else {
                 int color= ContextCompat.getColor(context, FileUtils.getColorResource(file));
 
                 image.setBackground(getBackground(color));
@@ -88,8 +81,7 @@ public final class RecyclerViewHolder0 extends RecyclerViewHolder
                 image.setImageDrawable(drawable);
             }
         }
-        else
-        {
+        else {
             int color= ContextCompat.getColor(context,FileUtils.getColorResource(file));
 
             image.setBackground(null);
@@ -103,16 +95,14 @@ public final class RecyclerViewHolder0 extends RecyclerViewHolder
     }
 
     @Override
-    protected void bindName(File file)
-    {
+    protected void bindName(File file) {
         boolean extension=PreferenceUtils.getBoolean(context,"pref_extension",true);
 
         name.setText(extension ? FileUtils.getName(file) : file.getName());
     }
 
     @Override
-    protected void bindInfo(File file)
-    {
+    protected void bindInfo(File file) {
         date.setText(FileUtils.getLastModified(file));
 
         size.setText(FileUtils.getSize(context,file));
@@ -122,8 +112,7 @@ public final class RecyclerViewHolder0 extends RecyclerViewHolder
         setVisibility(size,PreferenceUtils.getBoolean(context,"pref_size",false));
     }
 
-    private ShapeDrawable getBackground(int color)
-    {
+    private ShapeDrawable getBackground(int color) {
         ShapeDrawable shapeDrawable=new ShapeDrawable(new OvalShape());
 
         int size=(int)context.getResources().getDimension(R.dimen.avatar_size);

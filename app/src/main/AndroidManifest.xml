@@ -71,7 +71,8 @@
         <activity android:name=".activities.FragmentStorage" />
         <activity android:name=".activities.ActivityContacts" />
         <activity android:name=".activities.ActivityAfterMemoryCleaned" />
-        <activity android:name=".activities.ActivityFileManager"/>
+        <!--<activity android:name=".activities.ActivityFileManager"/>-->
+        <!--<activity android:name="com.appman.appmanager.explorer.FileManagerActivity"/>-->
         <activity
             android:name=".activities.ActivityNoInternetConnection"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />

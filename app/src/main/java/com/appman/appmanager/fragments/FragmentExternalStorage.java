@@ -20,6 +20,12 @@ public class FragmentExternalStorage extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.layout_fragment_internal_storage, container, false);
 
+        initRecyclerView();
+
         return mainView;
+    }
+
+    private void initRecyclerView() {
+
     }
 }

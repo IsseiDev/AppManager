@@ -5,11 +5,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.appman.appmanager.AppManagerApplication;
 import com.appman.appmanager.R;
@@ -29,11 +31,17 @@ import java.util.List;
  */
 public class ActivityFileManager extends AppCompatActivity{
 
+    public static final String EXTRA_NAME="com.appman.appmanager.EXTRA_NAME";
+
+    public static final String EXTRA_TYPE="com.appman.appmanager.EXTRA_TYPE";
+
+
     private AppPreferences appPreferences;
     private SlidingTabAdapter slidingTabAdapter;
 
-    private Toolbar toolbar;
+    public static Toolbar toolbar;
     private TextView_Regular textViewFileManagerStorage;
+    public static TextView textViewCurrentDirectory;
     private SlidingTabLayout tabs;
     private ViewPager pager;
     CharSequence titles[] = {"Internal Storage", "External Storage"};;
@@ -50,7 +58,6 @@ public class ActivityFileManager extends AppCompatActivity{
         initToolBar();
         initViews();
         initSlidingTabs();
-        initRecyclerView();
     }
 
     private void initToolBar() {
@@ -67,6 +74,7 @@ public class ActivityFileManager extends AppCompatActivity{
                     onBackPressed();
                 }
             });
+            toolbar.setOverflowIcon(ContextCompat.getDrawable(ActivityFileManager.this, R.drawable.ic_more));
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -87,6 +95,7 @@ public class ActivityFileManager extends AppCompatActivity{
                 startActivity(new Intent(Settings.ACTION_INTERNAL_STORAGE_SETTINGS));
             }
         });
+        textViewCurrentDirectory = (TextView) findViewById (R.id.textViewCurrentDirectory);
     }
     private void initSlidingTabs(){
 
@@ -109,7 +118,5 @@ public class ActivityFileManager extends AppCompatActivity{
         });
 
     }
-    private void initRecyclerView(){
 
-    }
 }
